@@ -981,6 +981,18 @@
       box-shadow: -4px 0 30px rgba(0,0,0,0.1);
     }
 
+    .mobile-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      letter-spacing: 0.1em;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
     .mobile-nav.open { right: 0; }
 
     .mobile-nav ul {
@@ -1048,6 +1060,7 @@
   <!-- MOBILE NAV OVERLAY -->
   <div class="mobile-overlay" id="mobileOverlay"></div>
   <nav class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" type="button" onclick="closeMobileNav()" aria-label="メニューを閉じる">&times;</button>
     <ul>
       <li><a href="#concept" onclick="closeMobileNav()">コンセプト</a></li>
       <li><a href="#menu" onclick="closeMobileNav()">メニュー</a></li>
