@@ -968,6 +968,45 @@
       50% { box-shadow: 0 0 0 12px rgba(184,151,90,0.1); }
     }
 
+    /* ── MOBILE NAV DRAWER ── */
+    .mobile-nav {
+      position: fixed;
+      top: 0; right: -100%;
+      width: 75%; max-width: 300px;
+      height: 100vh;
+      background: var(--white);
+      z-index: 2000;
+      padding: 5rem 2rem 2rem;
+      transition: right 0.35s ease;
+      box-shadow: -4px 0 30px rgba(0,0,0,0.1);
+    }
+
+    .mobile-nav.open { right: 0; }
+
+    .mobile-nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .mobile-nav a {
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      color: var(--ink);
+    }
+
+    .mobile-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 1999;
+      display: none;
+    }
+
+    .mobile-overlay.open { display: block; }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
       nav { padding: 1.2rem 2.5rem; }
@@ -995,44 +1034,7 @@
       footer { flex-direction: column; align-items: flex-start; padding: 2.5rem 1.5rem; }
       .footer-links { flex-wrap: wrap; gap: 1rem; }
 
-      /* Mobile nav drawer */
-      .mobile-nav {
-        position: fixed;
-        top: 0; right: -100%;
-        width: 75%; max-width: 300px;
-        height: 100vh;
-        background: var(--white);
-        z-index: 2000;
-        padding: 5rem 2rem 2rem;
-        transition: right 0.35s ease;
-        box-shadow: -4px 0 30px rgba(0,0,0,0.1);
-      }
 
-      .mobile-nav.open { right: 0; }
-
-      .mobile-nav ul {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-      }
-
-      .mobile-nav a {
-        font-size: 1rem;
-        font-weight: 300;
-        letter-spacing: 0.15em;
-        color: var(--ink);
-      }
-
-      .mobile-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.4);
-        z-index: 1999;
-        display: none;
-      }
-
-      .mobile-overlay.open { display: block; }
     }
   </style>
 </head>
