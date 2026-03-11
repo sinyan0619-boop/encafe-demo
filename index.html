@@ -1059,7 +1059,7 @@
 
   <!-- DEMO BANNER -->
   <div class="demo-banner" role="banner">
-    このサイトはデモ用です — For demonstration purposes only
+    このサイトはデモ用です — For demonstration purposes only (build 2026-03-11 23:15 JST)
   </div>
 
   <!-- MOBILE NAV OVERLAY -->
@@ -1412,15 +1412,21 @@
       if (isOpen) {
         closeMobileNav();
       } else {
-        mobileNav.classList.add('open');
-        mobileOverlay.classList.add('open');
+        openMobileNav();
       }
     });
 
     mobileOverlay.addEventListener('click', closeMobileNav);
 
+    function openMobileNav() {
+      mobileNav.classList.add('open');
+      mobileNav.style.transform = 'translateX(0)';
+      mobileOverlay.classList.add('open');
+    }
+
     function closeMobileNav() {
       mobileNav.classList.remove('open');
+      mobileNav.style.transform = 'translateX(100%)';
       mobileOverlay.classList.remove('open');
     }
 
